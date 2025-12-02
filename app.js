@@ -1,4 +1,3 @@
-
 // Initialize Firebase using compat SDK (simpler for static sites)
 const firebaseConfig = {
   apiKey: "AIzaSyCJhBArJ0njFc_7onw1_T3_JMxBIFVqq3Q",
@@ -96,18 +95,23 @@ const modelIndex = {
 
 // --- Helper: path utilities (for redirects) ---
 function getHomePath() {
-  // always go to root index.html relative to current location
-  const segments = window.location.pathname.split("/").filter(Boolean);
-  if (segments.length >= 2) {
-    // e.g. /Cellular-Master/apple/iphone-14.html
-    return "index.html";
+  // Check if we're in a subdirectory by looking at the current path
+  const path = window.location.pathname;
+  
+  // If path contains a subdirectory (like /apple/ or /samsung/)
+  if (path.includes('/apple/') || path.includes('/samsung/') || 
+      path.includes('/motorola/') || path.includes('/pixel/')) {
+    return "../index.html";
   }
   return "index.html";
 }
 
 function getLoginPath() {
-  const segments = window.location.pathname.split("/").filter(Boolean);
-  if (segments.length >= 3) {
+  const path = window.location.pathname;
+  
+  // If we're in a subdirectory
+  if (path.includes('/apple/') || path.includes('/samsung/') || 
+      path.includes('/motorola/') || path.includes('/pixel/')) {
     return "../login.html";
   }
   return "login.html";
@@ -118,13 +122,18 @@ function handleSearch(scopePrefix) {
   const input = document.getElementById("model-search-input");
   if (!input) return;
   const raw = input.value.trim().toLowerCase();
-  if (!raw) return;
+  if (!raw) {
+    alert("Please enter a phone model to search.");
+    return;
+  }
 
+  // Exact match first
   if (modelIndex[raw]) {
     window.location.href = scopePrefix + modelIndex[raw];
     return;
   }
 
+  // Partial match
   const matchKey = Object.keys(modelIndex).find(k => k.includes(raw));
   if (matchKey) {
     window.location.href = scopePrefix + modelIndex[matchKey];
@@ -248,13 +257,13 @@ document.addEventListener("click", async (evt) => {
 
   try {
     if (action === "reserve") {
-      alert("We will add online reservations later. For now, call the shop and mention: " + part);
+      alert("📞 To reserve this part, please call us at +1 514 299 3322 and mention: " + part);
     } else if (action === "add-cart") {
       await addToCollection("cart", part);
-      alert("Added to your cart.");
+      alert("✅ Added to your cart! Visit the cart page to review.");
     } else if (action === "add-fav") {
       await addToCollection("favourites", part);
-      alert("Saved to your favourites.");
+      alert("⭐ Saved to your favourites!");
     } else if (action === "remove-item") {
       const id   = btn.getAttribute("data-id");
       const kind = btn.getAttribute("data-kind");
@@ -266,10 +275,11 @@ document.addEventListener("click", async (evt) => {
         .delete();
       const card = btn.closest(".brand-model-card");
       if (card) card.remove();
+      alert("✅ Item removed.");
     }
   } catch (err) {
-    console.error(err);
-    alert("Something went wrong. Please try again.");
+    console.error("Error:", err);
+    alert("⚠️ Something went wrong: " + err.message + "\n\nPlease make sure you're logged in and try again.");
   }
 });
 
