@@ -818,59 +818,296 @@ img {
 
 <main class="page-main">
 
-  <section class="model-hero">
-    <div class="container">
-      <div class="breadcrumbs">Home / Services</div>
-      <h1 class="model-name">Repairs & Services</h1>
-      <p class="model-brand">Since 1998, Cellular Master has specialised in fast, professional repairs for phones, tablets and computers in Laval.</p>
-    </div>
-  </section>
-
-  <section class="services-strip">
-    <div class="container services-grid">
-      <article class="service-pill">
-        <h3>iPhone, iPad & Mac</h3>
-        <p>Glass and OLED/LCD replacement, battery swaps, charging ports, speakers, cameras, software issues and more for Apple devices.</p>
-      </article>
-      <article class="service-pill">
-        <h3>Samsung, Tablets & Watches</h3>
-        <p>Galaxy phones, A-series, tablets and Galaxy Watch repairs – from broken screens to water damage and board-level diagnostics.</p>
-      </article>
-      <article class="service-pill">
-        <h3>PC & Laptop Repair</h3>
-        <p>Windows laptops and desktops: cracked screens, slow performance, data backup, virus removal and setup for home or office.</p>
-      </article>
-      <article class="service-pill">
-        <h3>Microsolder & Board Work</h3>
-        <p>Advanced repair for “dead” phones, no power, boot loops, no touch, no image and charging IC faults.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="brand-grid-page">
-    <div class="container">
-      <h2>How our repair process works</h2>
-      <p>We keep the process simple so you can get back to your day as quickly as possible.</p>
-      <div class="brand-models-grid">
-        <div class="brand-model-card">
-          <span><strong>1. Tell us what’s wrong</strong></span>
-          <span>Call, message or visit with your device. Tell us the brand, model and what happened – dropped, water, no power, etc.</span>
-        </div>
-        <div class="brand-model-card">
-          <span><strong>2. Get a quote</strong></span>
-          <span>We can usually give a price range over the phone and confirm it after a quick in-store diagnosis. We aim to match or beat local quotes.</span>
-        </div>
-        <div class="brand-model-card">
-          <span><strong>3. Same-day or next-day repair</strong></span>
-          <span>Most screen and battery jobs are done the same day. Complex board work may take longer – we’ll let you know up front.</span>
-        </div>
-        <div class="brand-model-card">
-          <span><strong>4. Pickup & testing</strong></span>
-          <span>We test calls, Wi-Fi, camera, touch and charging with you before you leave so you know everything works properly.</span>
+  <!-- HERO SECTION -->
+  <section class="services-hero" style="background: linear-gradient(135deg, #0f6fb6 0%, #31a0ff 100%); padding: 5rem 0; color: white; position: relative; overflow: hidden;">
+    <div class="container" style="position: relative; z-index: 1;">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h1 class="fade-in" style="font-size: 3.5rem; margin-bottom: 1.5rem; font-weight: 800;">🔧 Our Services</h1>
+        <p class="fade-in delay-1" style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.6;">Professional repairs for phones, tablets, and computers since 1998. Fast service, quality parts, expert technicians.</p>
+        <div class="fade-in delay-2" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+          <a href="tel:+15142993322" style="background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 999px; font-size: 1.1rem; font-weight: 600; backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s ease;">📞 Call Us</a>
+          <a href="#location" style="background: #ffffff; color: #0f6fb6; padding: 1rem 2rem; border-radius: 999px; font-size: 1.1rem; font-weight: 600; transition: all 0.3s ease;">📍 Find Us</a>
         </div>
       </div>
     </div>
+    <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: rgba(255,255,255,0.1); border-radius: 50%; animation: float 8s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: -50px; left: -50px; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; animation: float 6s ease-in-out infinite;"></div>
   </section>
+
+  <!-- MAIN SERVICES WITH IMAGES -->
+  <section style="padding: 5rem 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--blue-main);">What We Fix 🛠️</h2>
+        <p style="font-size: 1.1rem; color: var(--gray-text);">From screen replacements to complex board repairs</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-bottom: 4rem;">
+        
+        <!-- iPhone/iPad/Mac -->
+        <div class="service-card fade-in" style="background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1); transition: all 0.4s ease;">
+          <div style="height: 250px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1621768216002-5ac171876625?w=600&h=250&fit=crop" alt="iPhone repair" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+          </div>
+          <div style="padding: 2rem;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--blue-main); display: flex; align-items: center; gap: 0.5rem;">🍎 iPhone, iPad & Mac</h3>
+            <ul style="list-style: none; padding: 0; line-height: 1.8; color: var(--gray-text);">
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Screen & OLED replacement</li>
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Battery replacement</li>
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Charging port repair</li>
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Camera & speaker fixes</li>
+              <li style="padding: 0.5rem 0;">✅ Software troubleshooting</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Samsung/Android -->
+        <div class="service-card fade-in delay-1" style="background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1); transition: all 0.4s ease;">
+          <div style="height: 250px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=250&fit=crop" alt="Samsung repair" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+          </div>
+          <div style="padding: 2rem;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--blue-main); display: flex; align-items: center; gap: 0.5rem;">📱 Samsung & Android</h3>
+            <ul style="list-style: none; padding: 0; line-height: 1.8; color: var(--gray-text);">
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Galaxy S/A series repairs</li>
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Screen digitizer replacement</li>
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Water damage recovery</li>
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Galaxy Watch repairs</li>
+              <li style="padding: 0.5rem 0;">✅ Tablet screen fixes</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PC/Laptop -->
+        <div class="service-card fade-in delay-2" style="background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1); transition: all 0.4s ease;">
+          <div style="height: 250px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=250&fit=crop" alt="Laptop repair" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+          </div>
+          <div style="padding: 2rem;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--blue-main); display: flex; align-items: center; gap: 0.5rem;">💻 PC & Laptop Repair</h3>
+            <ul style="list-style: none; padding: 0; line-height: 1.8; color: var(--gray-text);">
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Screen replacement</li>
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Performance optimization</li>
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Virus & malware removal</li>
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Data backup & recovery</li>
+              <li style="padding: 0.5rem 0;">✅ Hardware upgrades</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Advanced Repair -->
+        <div class="service-card fade-in delay-3" style="background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1); transition: all 0.4s ease;">
+          <div style="height: 250px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=250&fit=crop" alt="Microsolder repair" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+          </div>
+          <div style="padding: 2rem;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--blue-main); display: flex; align-items: center; gap: 0.5rem;">🔬 Microsolder & Board</h3>
+            <ul style="list-style: none; padding: 0; line-height: 1.8; color: var(--gray-text);">
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ No power / Dead phone</li>
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Boot loop fixes</li>
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Touch IC repair</li>
+              <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">✅ Charging IC replacement</li>
+              <li style="padding: 0.5rem 0;">✅ Board-level diagnostics</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTRA IMAGES SHOWCASE -->
+  <section style="padding: 5rem 0; background: white;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--blue-main);">Our Workshop 🔧</h2>
+        <p style="font-size: 1.1rem; color: var(--gray-text);">Professional tools & expert technicians</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+        
+        <div class="fade-in" style="border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1); position: relative; height: 300px;">
+          <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600&h=300&fit=crop" alt="Repair tools" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 2rem 1.5rem; color: white;">
+            <h3 style="font-size: 1.3rem; font-weight: 700;">Professional Tools</h3>
+          </div>
+        </div>
+
+        <div class="fade-in delay-1" style="border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1); position: relative; height: 300px;">
+          <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600&h=300&fit=crop" alt="Repair workspace" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 2rem 1.5rem; color: white;">
+            <h3 style="font-size: 1.3rem; font-weight: 700;">Expert Workspace</h3>
+          </div>
+        </div>
+
+        <div class="fade-in delay-2" style="border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1); position: relative; height: 300px;">
+          <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&h=300&fit=crop" alt="Phone parts" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 2rem 1.5rem; color: white;">
+            <h3 style="font-size: 1.3rem; font-weight: 700;">Quality Parts</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS PROCESS -->
+  <section style="padding: 5rem 0; background: var(--blue-soft);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--blue-main);">How It Works ⚙️</h2>
+        <p style="font-size: 1.1rem; color: var(--gray-text);">Simple 4-step process from diagnosis to pickup</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+        
+        <div class="process-step fade-in" style="text-align: center; padding: 2rem; background: white; border-radius: 20px; position: relative; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);">
+          <div style="width: 80px; height: 80px; background: var(--blue-main); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800; margin: 0 auto 1.5rem;">1</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--blue-main);">Tell Us</h3>
+          <p style="color: var(--gray-text); line-height: 1.6;">Call, message or visit. Tell us what happened to your device.</p>
+        </div>
+
+        <div class="process-step fade-in delay-1" style="text-align: center; padding: 2rem; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);">
+          <div style="width: 80px; height: 80px; background: var(--blue-main); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800; margin: 0 auto 1.5rem;">2</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--blue-main);">Get Quote</h3>
+          <p style="color: var(--gray-text); line-height: 1.6;">Quick diagnosis and transparent pricing. No hidden fees.</p>
+        </div>
+
+        <div class="process-step fade-in delay-2" style="text-align: center; padding: 2rem; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);">
+          <div style="width: 80px; height: 80px; background: var(--blue-main); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800; margin: 0 auto 1.5rem;">3</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--blue-main);">We Repair</h3>
+          <p style="color: var(--gray-text); line-height: 1.6;">Most repairs done same-day or next-day. We'll keep you updated.</p>
+        </div>
+
+        <div class="process-step fade-in delay-3" style="text-align: center; padding: 2rem; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);">
+          <div style="width: 80px; height: 80px; background: var(--blue-main); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800; margin: 0 auto 1.5rem;">4</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--blue-main);">Pick Up</h3>
+          <p style="color: var(--gray-text); line-height: 1.6;">We test everything with you before you leave. All working!</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION WITH GOOGLE MAPS -->
+  <section id="location" style="padding: 5rem 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--blue-main);">Find Us 📍</h2>
+        <p style="font-size: 1.1rem; color: var(--gray-text);">Visit our shop in Laval - Walk-ins welcome!</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+        
+        <!-- Google Maps Embed -->
+        <div class="fade-in" style="border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2789.8856789276347!2d-73.72844!3d45.5666667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc9201a7f7f7f7f%3A0x1234567890abcdef!2s704%20Boul.%20Cur%C3%A9-Labelle%2C%20Laval%2C%20QC%20H7V%202T9!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="fade-in delay-1">
+          
+          <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 2rem;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--blue-main);">📞 Contact Info</h3>
+            
+            <div style="margin-bottom: 1.5rem;">
+              <div style="font-weight: 600; color: var(--blue-main); margin-bottom: 0.5rem;">📍 Address</div>
+              <a href="https://maps.google.com/?q=704+Curé-Labelle+Laval+QC" target="_blank" style="color: var(--gray-text); line-height: 1.6; text-decoration: underline;">704 Boul. Curé-Labelle<br>Laval, QC H7V 2T9</a>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <div style="font-weight: 600; color: var(--blue-main); margin-bottom: 0.5rem;">📞 Phone</div>
+              <a href="tel:+15142993322" style="color: var(--gray-text); font-size: 1.2rem; font-weight: 500;">+1 (514) 299-3322</a>
+            </div>
+
+            <div>
+              <div style="font-weight: 600; color: var(--blue-main); margin-bottom: 0.5rem;">✉️ Email</div>
+              <a href="mailto:support@cellularmaster.ca" style="color: var(--gray-text);">support@cellularmaster.ca</a>
+            </div>
+          </div>
+
+          <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);">
+            <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--blue-main);">🕐 Opening Hours</h3>
+            
+            <div style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #f0f0f0;">
+              <span style="font-weight: 600; color: var(--blue-text);">Monday - Friday</span>
+              <span style="color: var(--gray-text);">10:00 - 19:00</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #f0f0f0;">
+              <span style="font-weight: 600; color: var(--blue-text);">Saturday</span>
+              <span style="color: var(--gray-text);">10:00 - 14:00</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; padding: 1rem 0;">
+              <span style="font-weight: 600; color: var(--blue-text);">Sunday</span>
+              <span style="color: #ef4444; font-weight: 600;">Closed</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Get Directions Button -->
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="https://maps.google.com/?q=704+Curé-Labelle+Laval+QC" target="_blank" style="display: inline-block; background: linear-gradient(135deg, var(--blue-main), #31a0ff); color: white; padding: 1.2rem 3rem; border-radius: 999px; font-size: 1.2rem; font-weight: 700; box-shadow: 0 10px 30px rgba(15, 111, 182, 0.3); transition: all 0.3s ease;">🗺️ Get Directions</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section style="padding: 5rem 0; background: white;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--blue-main);">Why Choose Us? 🌟</h2>
+        <p style="font-size: 1.1rem; color: var(--gray-text);">25+ years serving Laval</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+        
+        <div class="fade-in" style="text-align: center; padding: 2rem;">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">⚡</div>
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.8rem; color: var(--blue-main);">Fast Service</h3>
+          <p style="color: var(--gray-text); line-height: 1.6;">Most repairs completed same-day or next-day</p>
+        </div>
+
+        <div class="fade-in delay-1" style="text-align: center; padding: 2rem;">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">💎</div>
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.8rem; color: var(--blue-main);">Quality Parts</h3>
+          <p style="color: var(--gray-text); line-height: 1.6;">OEM-quality parts with warranty</p>
+        </div>
+
+        <div class="fade-in delay-2" style="text-align: center; padding: 2rem;">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">👨‍🔧</div>
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.8rem; color: var(--blue-main);">Expert Techs</h3>
+          <p style="color: var(--gray-text); line-height: 1.6;">25+ years of combined experience</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(15, 23, 42, 0.2) !important;
+    }
+
+    .service-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .process-step:hover {
+      transform: translateY(-5px);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
 
 </main>
   <footer class="site-footer">

@@ -818,57 +818,191 @@ img {
 
 <main class="page-main">
 
-  <section class="model-hero">
-    <div class="container">
-      <div class="breadcrumbs">Home / FAQ</div>
-      <h1 class="model-name">Frequently Asked Questions</h1>
-      <p class="model-brand">Quick answers to the most common questions we get in store and over the phone.</p>
+  <!-- HERO SECTION -->
+  <section class="faq-hero" style="background: linear-gradient(135deg, #0f6fb6 0%, #31a0ff 100%); padding: 5rem 0; color: white; position: relative; overflow: hidden;">
+    <div class="container" style="position: relative; z-index: 1;">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h1 class="fade-in" style="font-size: 3.5rem; margin-bottom: 1.5rem; font-weight: 800;">❓ FAQ</h1>
+        <p class="fade-in delay-1" style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.6;">Got questions? We've got answers! Quick info about repairs, pricing, and our services.</p>
+      </div>
     </div>
+    <div style="position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: rgba(255,255,255,0.1); border-radius: 50%; animation: float 7s ease-in-out infinite;"></div>
   </section>
 
-  <section class="brand-grid-page">
-    <div class="container">
-      <h2>Repairs & pricing</h2>
-      <div class="brand-models-grid">
-        <div class="brand-model-card">
-          <span><strong>How long does a typical repair take?</strong></span>
-          <span>Most screen and battery replacements are done the same day, often within a couple of hours. Water damage or board-level work can take longer because we need more testing time.</span>
-        </div>
-        <div class="brand-model-card">
-          <span><strong>Do you use original or aftermarket parts?</strong></span>
-          <span>We work with high-quality parts from trusted suppliers and test every part in store. If there is more than one option for your device, we’ll explain the difference in price and quality.</span>
-        </div>
-        <div class="brand-model-card">
-          <span><strong>Can you give me a quote before I come?</strong></span>
-          <span>Yes. Give us the exact model (for example iPhone 14 Pro Max or Galaxy S23) and what happened. We can usually give a price range by phone and confirm it once we see the device.</span>
-        </div>
-        <div class="brand-model-card">
-          <span><strong>Is there a warranty on the repair?</strong></span>
-          <span>Repairs come with a limited warranty against defects in parts or workmanship. Physical damage, liquid damage or future drops are not covered.</span>
-        </div>
-      </div>
-
-      <h2 style="margin-top:2rem;">Devices & services</h2>
-      <div class="brand-models-grid">
-        <div class="brand-model-card">
-          <span><strong>Which devices do you repair?</strong></span>
-          <span>We primarily work on Apple, Samsung, Motorola and Google Pixel phones, plus many iPads, tablets and computers. Call us if you’re not sure – if we can’t fix it, we’ll try to point you to someone who can.</span>
-        </div>
-        <div class="brand-model-card">
-          <span><strong>Can you recover my photos and data?</strong></span>
-          <span>In many cases, yes. If the phone still powers on, we can often repair it long enough to back up your data. If the main board is severely damaged, recovery may not be possible – we’ll explain the options.</span>
-        </div>
-        <div class="brand-model-card">
-          <span><strong>Do you ship parts or phones?</strong></span>
-          <span>No. We are a local repair shop only – all repairs, payments and pickups happen in store in Laval. If you want to reserve a part, you can call ahead and we’ll keep it aside for you.</span>
-        </div>
-        <div class="brand-model-card">
-          <span><strong>Do I need an appointment?</strong></span>
-          <span>Walk-ins are always welcome during opening hours. For urgent or complex jobs, calling ahead helps us plan and reserve time for your device.</span>
+  <!-- HERO IMAGE SECTION -->
+  <section style="padding: 0; background: white;">
+    <div class="container" style="max-width: 100%; padding: 0;">
+      <div style="height: 400px; overflow: hidden; position: relative;">
+        <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=1200&h=400&fit=crop" alt="Phone repair shop" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,111,182,0.9) 0%, rgba(49,160,255,0.7) 100%); display: flex; align-items: center; justify-content: center;">
+          <div style="text-align: center; color: white; padding: 2rem;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 800;">Expert Repairs Since 1998 🔧</h2>
+            <p style="font-size: 1.2rem; opacity: 0.95;">Professional service you can trust</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- FAQ CATEGORIES -->
+  <section style="padding: 5rem 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
+    <div class="container">
+      
+      <!-- Repairs & Pricing -->
+      <div class="faq-category fade-in" style="margin-bottom: 4rem;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">💰</div>
+          <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--blue-main);">Repairs & Pricing</h2>
+          <p style="color: var(--gray-text);">Everything about costs and repair times</p>
+        </div>
+
+        <div style="max-width: 900px; margin: 0 auto;">
+          
+          <!-- FAQ Item 1 -->
+          <div class="faq-item" style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); transition: all 0.3s ease;">
+            <div style="display: flex; align-items: start; gap: 1.5rem;">
+              <div style="min-width: 50px; height: 50px; background: var(--blue-main); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700;">Q</div>
+              <div style="flex: 1;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--blue-main); font-weight: 700;">How long does a typical repair take?</h3>
+                <p style="color: var(--gray-text); line-height: 1.7; font-size: 1.05rem;">Most screen and battery replacements are done the same day, often within a couple of hours. Water damage or board-level work can take longer because we need more testing time. We'll give you an estimated timeframe when you drop off your device.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item" style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); transition: all 0.3s ease;">
+            <div style="display: flex; align-items: start; gap: 1.5rem;">
+              <div style="min-width: 50px; height: 50px; background: var(--blue-main); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700;">Q</div>
+              <div style="flex: 1;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--blue-main); font-weight: 700;">Do you use original or aftermarket parts?</h3>
+                <p style="color: var(--gray-text); line-height: 1.7; font-size: 1.05rem;">We work with high-quality OEM-grade parts from trusted suppliers and test every part in store. If there is more than one option for your device, we'll explain the difference in price and quality so you can make an informed decision.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item" style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); transition: all 0.3s ease;">
+            <div style="display: flex; align-items: start; gap: 1.5rem;">
+              <div style="min-width: 50px; height: 50px; background: var(--blue-main); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700;">Q</div>
+              <div style="flex: 1;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--blue-main); font-weight: 700;">Can you give me a quote before I come?</h3>
+                <p style="color: var(--gray-text); line-height: 1.7; font-size: 1.05rem;">Yes! Give us the exact model (for example iPhone 14 Pro Max or Galaxy S23) and what happened. We can usually give a price range by phone and confirm it once we see the device.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item" style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); transition: all 0.3s ease;">
+            <div style="display: flex; align-items: start; gap: 1.5rem;">
+              <div style="min-width: 50px; height: 50px; background: var(--blue-main); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700;">Q</div>
+              <div style="flex: 1;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--blue-main); font-weight: 700;">Is there a warranty on the repair?</h3>
+                <p style="color: var(--gray-text); line-height: 1.7; font-size: 1.05rem;">Repairs come with a limited warranty against defects in parts or workmanship. Physical damage, liquid damage or future drops are not covered. Ask us about specific warranty terms when you drop off your device.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MIDDLE IMAGE SECTION -->
+      <div class="fade-in" style="margin-bottom: 4rem;">
+        <div style="border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15); height: 350px; position: relative;">
+          <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=1200&h=350&fit=crop" alt="Repair workspace" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(15,111,182,0.8), rgba(49,160,255,0.6)); display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 2rem;">
+            <div>
+              <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 800;">State-of-the-Art Equipment ⚡</h2>
+              <p style="font-size: 1.2rem; opacity: 0.95; max-width: 600px;">We use professional-grade tools and techniques for every repair</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Devices & Services -->
+      <div class="faq-category fade-in delay-1" style="margin-bottom: 4rem;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">🔧</div>
+          <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--blue-main);">Devices & Services</h2>
+          <p style="color: var(--gray-text);">What we fix and how we help</p>
+        </div>
+
+        <div style="max-width: 900px; margin: 0 auto;">
+          
+          <!-- FAQ Item 5 -->
+          <div class="faq-item" style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); transition: all 0.3s ease;">
+            <div style="display: flex; align-items: start; gap: 1.5rem;">
+              <div style="min-width: 50px; height: 50px; background: var(--blue-main); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700;">Q</div>
+              <div style="flex: 1;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--blue-main); font-weight: 700;">Which devices do you repair?</h3>
+                <p style="color: var(--gray-text); line-height: 1.7; font-size: 1.05rem;">We primarily work on Apple, Samsung, Motorola and Google Pixel phones, plus many iPads, tablets and computers. Call us if you're not sure – if we can't fix it, we'll try to point you to someone who can.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="faq-item" style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); transition: all 0.3s ease;">
+            <div style="display: flex; align-items: start; gap: 1.5rem;">
+              <div style="min-width: 50px; height: 50px; background: var(--blue-main); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700;">Q</div>
+              <div style="flex: 1;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--blue-main); font-weight: 700;">Can you recover my photos and data?</h3>
+                <p style="color: var(--gray-text); line-height: 1.7; font-size: 1.05rem;">In many cases, yes! If the phone still powers on, we can often repair it long enough to back up your data. If the main board is severely damaged, recovery may not be possible – we'll explain the options after diagnosis.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 7 -->
+          <div class="faq-item" style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); transition: all 0.3s ease;">
+            <div style="display: flex; align-items: start; gap: 1.5rem;">
+              <div style="min-width: 50px; height: 50px; background: var(--blue-main); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700;">Q</div>
+              <div style="flex: 1;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--blue-main); font-weight: 700;">Do you ship parts or phones?</h3>
+                <p style="color: var(--gray-text); line-height: 1.7; font-size: 1.05rem;">No. We are a local repair shop only – all repairs, payments and pickups happen in store in Laval. If you want to reserve a part, you can call ahead and we'll keep it aside for you.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 8 -->
+          <div class="faq-item" style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); transition: all 0.3s ease;">
+            <div style="display: flex; align-items: start; gap: 1.5rem;">
+              <div style="min-width: 50px; height: 50px; background: var(--blue-main); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700;">Q</div>
+              <div style="flex: 1;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--blue-main); font-weight: 700;">Do I need an appointment?</h3>
+                <p style="color: var(--gray-text); line-height: 1.7; font-size: 1.05rem;">Walk-ins are always welcome during opening hours! For urgent or complex jobs, calling ahead helps us plan and reserve time for your device.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STILL HAVE QUESTIONS CTA -->
+  <section style="padding: 5rem 0; background: linear-gradient(135deg, #0f6fb6 0%, #31a0ff 100%); color: white; text-align: center;">
+    <div class="container">
+      <div style="max-width: 600px; margin: 0 auto;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 800;">Still Have Questions? 🤔</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.95; line-height: 1.6;">Don't see your question here? Give us a call or visit our shop - we're happy to help!</p>
+        <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+          <a href="tel:+15142993322" style="background: white; color: #0f6fb6; padding: 1.2rem 2.5rem; border-radius: 999px; font-size: 1.1rem; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">📞 Call Us Now</a>
+          <a href="services.html#location" style="background: rgba(255,255,255,0.2); color: white; padding: 1.2rem 2.5rem; border-radius: 999px; font-size: 1.1rem; font-weight: 700; backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s ease;">📍 Visit Our Shop</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15) !important;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
 
 </main>
   <footer class="site-footer">
