@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Samsung – Cellular Master</title>
+  <title>Apple – Cellular Master</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
 
@@ -202,57 +202,114 @@ img {
   background: #e5e7eb;
 }
 
-/* SIMPLE DROPDOWN */
+/* MEGA MENU DROPDOWN - CATEGORIZED CLEAN STYLE */
 
 .has-dropdown .dropdown {
   position: absolute;
   top: 115%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
   background: #ffffff;
-  border-radius: 18px;
-  box-shadow: var(--shadow-soft);
-  padding: 0.75rem 1rem;
-  min-width: 240px;
-  max-width: 320px;
-  max-height: 320px;
-  overflow-y: auto;
+  border-radius: 20px;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.12);
+  padding: 2rem 2.5rem;
+  min-width: 900px;
+  max-width: 1000px;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(6px);
-  transition: opacity 0.14s ease-out, transform 0.14s ease-out;
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
   z-index: 40;
+  border: 1px solid #e5e7eb;
 }
 
 .has-dropdown:hover .dropdown {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
 .dropdown-title {
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 0.4rem;
-  color: var(--blue-text);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--blue-main);
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e7ff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.dropdown-badge {
+  background: linear-gradient(135deg, var(--blue-main), #31a0ff);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
 }
 
 .dropdown-list {
   list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem 2rem;
 }
 
-.dropdown-list li + li {
-  margin-top: 0.25rem;
+.dropdown-category {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
-.dropdown-list a {
-  display: block;
-  font-size: 0.86rem;
-  color: var(--gray-text);
-  white-space: normal;
-}
-
-.dropdown-list a:hover {
+.dropdown-category-title {
+  font-weight: 700;
+  font-size: 0.75rem;
   color: var(--blue-main);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e7ff;
+}
+
+.dropdown-category a {
+  display: block;
+  font-size: 0.88rem;
+  padding: 0.45rem 0.8rem;
+  color: var(--gray-text);
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  font-weight: 400;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.dropdown-category a::before {
+  content: '→';
+  position: absolute;
+  left: 0.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  color: var(--blue-main);
+  transition: all 0.2s ease;
+  font-weight: 700;
+}
+
+.dropdown-category a:hover {
+  color: var(--blue-main);
+  background: var(--blue-soft);
+  padding-left: 1.3rem;
+  font-weight: 500;
+}
+
+.dropdown-category a:hover::before {
+  opacity: 1;
+  left: 0.5rem;
 }
 
 /* HERO / SECTIONS / FOOTER */
@@ -701,109 +758,201 @@ img {
           <li class="has-dropdown nav-brand">
             <a href="apple.html">Apple</a>
       <div class="dropdown">
-        <div class="dropdown-title">Apple models</div>
-        <ul class="dropdown-list">
-        <li><a href="apple/iphone-17-pro-max.html">iPhone 17 Pro Max</a></li>
-        <li><a href="apple/iphone-17-pro.html">iPhone 17 Pro</a></li>
-        <li><a href="apple/iphone-17-air.html">iPhone 17 Air</a></li>
-        <li><a href="apple/iphone-17.html">iPhone 17</a></li>
-        <li><a href="apple/iphone-16-pro-max.html">iPhone 16 Pro Max</a></li>
-        <li><a href="apple/iphone-16-pro.html">iPhone 16 Pro</a></li>
-        <li><a href="apple/iphone-16-plus.html">iPhone 16 Plus</a></li>
-        <li><a href="apple/iphone-16.html">iPhone 16</a></li>
-        <li><a href="apple/iphone-16e-gen.html">iPhone 16e Gen</a></li>
-        <li><a href="apple/iphone-15-pro-max.html">iPhone 15 Pro Max</a></li>
-        <li><a href="apple/iphone-15-pro.html">iPhone 15 Pro</a></li>
-        <li><a href="apple/iphone-15-plus.html">iPhone 15 Plus</a></li>
-        <li><a href="apple/iphone-15.html">iPhone 15</a></li>
-        <li><a href="apple/iphone-14-pro-max.html">iPhone 14 Pro Max</a></li>
-        <li><a href="apple/iphone-14-pro.html">iPhone 14 Pro</a></li>
-        <li><a href="apple/iphone-14-plus.html">iPhone 14 Plus</a></li>
-        <li><a href="apple/iphone-14.html">iPhone 14</a></li>
-        <li><a href="apple/iphone-13-pro-max.html">iPhone 13 Pro Max</a></li>
-        <li><a href="apple/iphone-13-pro.html">iPhone 13 Pro</a></li>
-        <li><a href="apple/iphone-13-mini.html">iPhone 13 Mini</a></li>
-        <li><a href="apple/iphone-13.html">iPhone 13</a></li>
-        <li><a href="apple/iphone-12-pro-max.html">iPhone 12 Pro Max</a></li>
-        <li><a href="apple/iphone-12-pro.html">iPhone 12 Pro</a></li>
-        <li><a href="apple/iphone-12-mini.html">iPhone 12 Mini</a></li>
-        <li><a href="apple/iphone-12.html">iPhone 12</a></li>
-        <li><a href="apple/iphone-11-pro-max.html">iPhone 11 Pro Max</a></li>
-        <li><a href="apple/iphone-11-pro.html">iPhone 11 Pro</a></li>
-        <li><a href="apple/iphone-11.html">iPhone 11</a></li>
-        <li><a href="apple/iphone-xs-max.html">iPhone XS Max</a></li>
-        <li><a href="apple/iphone-xs.html">iPhone XS</a></li>
-        <li><a href="apple/iphone-xr.html">iPhone XR</a></li>
-        <li><a href="apple/iphone-x.html">iPhone X</a></li>
-        <li><a href="apple/iphone-8-plus.html">iPhone 8 Plus</a></li>
-        <li><a href="apple/iphone-8.html">iPhone 8</a></li>
-        <li><a href="apple/iphone-se-2022.html">iPhone SE 2022</a></li>
-        <li><a href="apple/iphone-se-2020.html">iPhone SE 2020</a></li>
-        </ul>
+        <div class="dropdown-title">Apple <span class="dropdown-badge">Repairs</span></div>
+        <div class="dropdown-list">
+          
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">iPhone 17</div>
+            <a href="apple/iphone-17-pro-max.html">iPhone 17 Pro Max</a>
+            <a href="apple/iphone-17-pro.html">iPhone 17 Pro</a>
+            <a href="apple/iphone-17-air.html">iPhone 17 Air</a>
+            <a href="apple/iphone-17.html">iPhone 17</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">iPhone 16</div>
+            <a href="apple/iphone-16-pro-max.html">iPhone 16 Pro Max</a>
+            <a href="apple/iphone-16-pro.html">iPhone 16 Pro</a>
+            <a href="apple/iphone-16-plus.html">iPhone 16 Plus</a>
+            <a href="apple/iphone-16.html">iPhone 16</a>
+            <a href="apple/iphone-16e-gen.html">iPhone 16e Gen</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">iPhone 15</div>
+            <a href="apple/iphone-15-pro-max.html">iPhone 15 Pro Max</a>
+            <a href="apple/iphone-15-pro.html">iPhone 15 Pro</a>
+            <a href="apple/iphone-15-plus.html">iPhone 15 Plus</a>
+            <a href="apple/iphone-15.html">iPhone 15</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">iPhone 14</div>
+            <a href="apple/iphone-14-pro-max.html">iPhone 14 Pro Max</a>
+            <a href="apple/iphone-14-pro.html">iPhone 14 Pro</a>
+            <a href="apple/iphone-14-plus.html">iPhone 14 Plus</a>
+            <a href="apple/iphone-14.html">iPhone 14</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">iPhone 13</div>
+            <a href="apple/iphone-13-pro-max.html">iPhone 13 Pro Max</a>
+            <a href="apple/iphone-13-pro.html">iPhone 13 Pro</a>
+            <a href="apple/iphone-13-mini.html">iPhone 13 Mini</a>
+            <a href="apple/iphone-13.html">iPhone 13</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">iPhone 12</div>
+            <a href="apple/iphone-12-pro-max.html">iPhone 12 Pro Max</a>
+            <a href="apple/iphone-12-pro.html">iPhone 12 Pro</a>
+            <a href="apple/iphone-12-mini.html">iPhone 12 Mini</a>
+            <a href="apple/iphone-12.html">iPhone 12</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">iPhone 11 & Older</div>
+            <a href="apple/iphone-11-pro-max.html">iPhone 11 Pro Max</a>
+            <a href="apple/iphone-11-pro.html">iPhone 11 Pro</a>
+            <a href="apple/iphone-11.html">iPhone 11</a>
+            <a href="apple/iphone-xs-max.html">iPhone XS Max</a>
+            <a href="apple/iphone-xs.html">iPhone XS</a>
+            <a href="apple/iphone-xr.html">iPhone XR</a>
+            <a href="apple/iphone-x.html">iPhone X</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">iPhone 8 & SE</div>
+            <a href="apple/iphone-8-plus.html">iPhone 8 Plus</a>
+            <a href="apple/iphone-8.html">iPhone 8</a>
+            <a href="apple/iphone-se-2022.html">iPhone SE 2022</a>
+            <a href="apple/iphone-se-2020.html">iPhone SE 2020</a>
+          </div>
+
+        </div>
       </div>
           </li>
           <li class="has-dropdown nav-brand">
             <a href="samsung.html">Samsung</a>
       <div class="dropdown">
-        <div class="dropdown-title">Samsung models</div>
-        <ul class="dropdown-list">
-        <li><a href="samsung/galaxy-s25-ultra.html">Galaxy S25 Ultra</a></li>
-        <li><a href="samsung/galaxy-s25.html">Galaxy S25+</a></li>
-        <li><a href="samsung/galaxy-s25.html">Galaxy S25</a></li>
-        <li><a href="samsung/galaxy-s24-ultra.html">Galaxy S24 Ultra</a></li>
-        <li><a href="samsung/galaxy-s24.html">Galaxy S24+</a></li>
-        <li><a href="samsung/galaxy-s24.html">Galaxy S24</a></li>
-        <li><a href="samsung/galaxy-s23-ultra.html">Galaxy S23 Ultra</a></li>
-        <li><a href="samsung/galaxy-s23.html">Galaxy S23+</a></li>
-        <li><a href="samsung/galaxy-s23.html">Galaxy S23</a></li>
-        <li><a href="samsung/galaxy-s22-ultra.html">Galaxy S22 Ultra</a></li>
-        <li><a href="samsung/galaxy-s22.html">Galaxy S22+</a></li>
-        <li><a href="samsung/galaxy-s22.html">Galaxy S22</a></li>
-        <li><a href="samsung/galaxy-s21-ultra.html">Galaxy S21 Ultra</a></li>
-        <li><a href="samsung/galaxy-s21.html">Galaxy S21+</a></li>
-        <li><a href="samsung/galaxy-s21.html">Galaxy S21</a></li>
-        <li><a href="samsung/galaxy-s20-ultra.html">Galaxy S20 Ultra</a></li>
-        <li><a href="samsung/galaxy-s20.html">Galaxy S20+</a></li>
-        <li><a href="samsung/galaxy-s20.html">Galaxy S20</a></li>
-        <li><a href="samsung/galaxy-a55.html">Galaxy A55</a></li>
-        <li><a href="samsung/galaxy-a54.html">Galaxy A54</a></li>
-        <li><a href="samsung/galaxy-a53.html">Galaxy A53</a></li>
-        <li><a href="samsung/galaxy-a52.html">Galaxy A52</a></li>
-        <li><a href="samsung/galaxy-a51.html">Galaxy A51</a></li>
-        </ul>
+        <div class="dropdown-title">Samsung <span class="dropdown-badge">Repairs</span></div>
+        <div class="dropdown-list">
+          
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Galaxy S25</div>
+            <a href="samsung/galaxy-s25-ultra.html">Galaxy S25 Ultra</a>
+            <a href="samsung/galaxy-s25.html">Galaxy S25+</a>
+            <a href="samsung/galaxy-s25.html">Galaxy S25</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Galaxy S24</div>
+            <a href="samsung/galaxy-s24-ultra.html">Galaxy S24 Ultra</a>
+            <a href="samsung/galaxy-s24.html">Galaxy S24+</a>
+            <a href="samsung/galaxy-s24.html">Galaxy S24</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Galaxy S23</div>
+            <a href="samsung/galaxy-s23-ultra.html">Galaxy S23 Ultra</a>
+            <a href="samsung/galaxy-s23.html">Galaxy S23+</a>
+            <a href="samsung/galaxy-s23.html">Galaxy S23</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Galaxy S22</div>
+            <a href="samsung/galaxy-s22-ultra.html">Galaxy S22 Ultra</a>
+            <a href="samsung/galaxy-s22.html">Galaxy S22+</a>
+            <a href="samsung/galaxy-s22.html">Galaxy S22</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Galaxy S21</div>
+            <a href="samsung/galaxy-s21-ultra.html">Galaxy S21 Ultra</a>
+            <a href="samsung/galaxy-s21.html">Galaxy S21+</a>
+            <a href="samsung/galaxy-s21.html">Galaxy S21</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Galaxy S20</div>
+            <a href="samsung/galaxy-s20-ultra.html">Galaxy S20 Ultra</a>
+            <a href="samsung/galaxy-s20.html">Galaxy S20+</a>
+            <a href="samsung/galaxy-s20.html">Galaxy S20</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Galaxy A Series</div>
+            <a href="samsung/galaxy-a55.html">Galaxy A55</a>
+            <a href="samsung/galaxy-a54.html">Galaxy A54</a>
+            <a href="samsung/galaxy-a53.html">Galaxy A53</a>
+            <a href="samsung/galaxy-a52.html">Galaxy A52</a>
+            <a href="samsung/galaxy-a51.html">Galaxy A51</a>
+          </div>
+
+        </div>
       </div>
           </li>
           <li class="has-dropdown nav-brand">
             <a href="motorola.html">Motorola</a>
       <div class="dropdown">
-        <div class="dropdown-title">Motorola models</div>
-        <ul class="dropdown-list">
-        <li><a href="motorola/moto-edge.html">Moto Edge+</a></li>
-        <li><a href="motorola/moto-edge.html">Moto Edge</a></li>
-        <li><a href="motorola/moto-g-power.html">Moto G Power</a></li>
-        <li><a href="motorola/moto-g-stylus.html">Moto G Stylus</a></li>
-        <li><a href="motorola/moto-g-play.html">Moto G Play</a></li>
-        <li><a href="motorola/moto-g8.html">Moto G8</a></li>
-        <li><a href="motorola/moto-g7.html">Moto G7</a></li>
-        <li><a href="motorola/moto-one.html">Moto One</a></li>
-        </ul>
+        <div class="dropdown-title">Motorola <span class="dropdown-badge">Repairs</span></div>
+        <div class="dropdown-list">
+          
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Moto Edge</div>
+            <a href="motorola/moto-edge.html">Moto Edge+</a>
+            <a href="motorola/moto-edge.html">Moto Edge</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Moto G Series</div>
+            <a href="motorola/moto-g-power.html">Moto G Power</a>
+            <a href="motorola/moto-g-stylus.html">Moto G Stylus</a>
+            <a href="motorola/moto-g-play.html">Moto G Play</a>
+            <a href="motorola/moto-g8.html">Moto G8</a>
+            <a href="motorola/moto-g7.html">Moto G7</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Other Models</div>
+            <a href="motorola/moto-one.html">Moto One</a>
+          </div>
+
+        </div>
       </div>
           </li>
           <li class="has-dropdown nav-brand">
             <a href="pixel.html">Google Pixel</a>
       <div class="dropdown">
-        <div class="dropdown-title">Google Pixel models</div>
-        <ul class="dropdown-list">
-        <li><a href="pixel/pixel-8-pro.html">Pixel 8 Pro</a></li>
-        <li><a href="pixel/pixel-8.html">Pixel 8</a></li>
-        <li><a href="pixel/pixel-7-pro.html">Pixel 7 Pro</a></li>
-        <li><a href="pixel/pixel-7.html">Pixel 7</a></li>
-        <li><a href="pixel/pixel-6-pro.html">Pixel 6 Pro</a></li>
-        <li><a href="pixel/pixel-6.html">Pixel 6</a></li>
-        <li><a href="pixel/pixel-5a.html">Pixel 5a</a></li>
-        <li><a href="pixel/pixel-5.html">Pixel 5</a></li>
-        <li><a href="pixel/pixel-4a.html">Pixel 4a</a></li>
-        </ul>
+        <div class="dropdown-title">Google Pixel <span class="dropdown-badge">Repairs</span></div>
+        <div class="dropdown-list">
+          
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Pixel 8</div>
+            <a href="pixel/pixel-8-pro.html">Pixel 8 Pro</a>
+            <a href="pixel/pixel-8.html">Pixel 8</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Pixel 7</div>
+            <a href="pixel/pixel-7-pro.html">Pixel 7 Pro</a>
+            <a href="pixel/pixel-7.html">Pixel 7</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Pixel 6</div>
+            <a href="pixel/pixel-6-pro.html">Pixel 6 Pro</a>
+            <a href="pixel/pixel-6.html">Pixel 6</a>
+          </div>
+
+          <div class="dropdown-category">
+            <div class="dropdown-category-title">Pixel 5 & 4</div>
+            <a href="pixel/pixel-5a.html">Pixel 5a</a>
+            <a href="pixel/pixel-5.html">Pixel 5</a>
+            <a href="pixel/pixel-4a.html">Pixel 4a</a>
+          </div>
+
+        </div>
       </div>
           </li>
             <li class="nav-divider"></li>
@@ -818,133 +967,213 @@ img {
 
 <main class="page-main">
 
-  <section class="brand-grid-page">
-    <div class="container">
-      <h1>Samsung models</h1>
-      <p>Select your Samsung model to see available glass, battery and case options. All prices are shown as $80 + fees and are paid in store.</p>
-      <div class="brand-models-grid">
+<main class="page-main">
 
-      <a class="brand-model-card" href="samsung/galaxy-s25-ultra.html">
-        <span>Galaxy S25 Ultra</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s25.html">
-        <span>Galaxy S25+</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s25.html">
-        <span>Galaxy S25</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s24-ultra.html">
-        <span>Galaxy S24 Ultra</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s24.html">
-        <span>Galaxy S24+</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s24.html">
-        <span>Galaxy S24</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s23-ultra.html">
-        <span>Galaxy S23 Ultra</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s23.html">
-        <span>Galaxy S23+</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s23.html">
-        <span>Galaxy S23</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s22-ultra.html">
-        <span>Galaxy S22 Ultra</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s22.html">
-        <span>Galaxy S22+</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s22.html">
-        <span>Galaxy S22</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s21-ultra.html">
-        <span>Galaxy S21 Ultra</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s21.html">
-        <span>Galaxy S21+</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s21.html">
-        <span>Galaxy S21</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s20-ultra.html">
-        <span>Galaxy S20 Ultra</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s20.html">
-        <span>Galaxy S20+</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-s20.html">
-        <span>Galaxy S20</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-a55.html">
-        <span>Galaxy A55</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-a54.html">
-        <span>Galaxy A54</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-a53.html">
-        <span>Galaxy A53</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-a52.html">
-        <span>Galaxy A52</span>
-      </a>
-
-      <a class="brand-model-card" href="samsung/galaxy-a51.html">
-        <span>Galaxy A51</span>
-      </a>
-
+  <!-- HERO SECTION FOR SAMSUNG -->
+  <section class="brand-hero" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 4rem 0; color: white; position: relative; overflow: hidden;">
+    <div class="container" style="position: relative; z-index: 1;">
+      <div style="max-width: 600px;">
+        <h1 class="fade-in" style="font-size: 3rem; margin-bottom: 1rem; font-weight: 800;">📱 Samsung Repairs</h1>
+        <p class="fade-in delay-1" style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">Expert repairs for Galaxy S-series, A-series and more. From the latest S25 to trusted older models.</p>
+        <div class="fade-in delay-2" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 999px; font-size: 0.9rem;">✅ OEM screens</span>
+          <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 999px; font-size: 0.9rem;">✅ Fast service</span>
+          <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 999px; font-size: 0.9rem;">✅ Quality guaranteed</span>
+        </div>
       </div>
+    </div>
+    <div style="position: absolute; top: -50px; right: -50px; width: 400px; height: 400px; background: rgba(255,255,255,0.1); border-radius: 50%; animation: float 6s ease-in-out infinite;"></div>
+  </section>
+
+  <!-- MODELS SECTION WITH CATEGORIES -->
+  <section class="brand-models-section" style="padding: 4rem 0;">
+    <div class="container">
+      
+      <!-- Galaxy S25 Series -->
+      <div class="model-category fade-in" style="margin-bottom: 4rem;">
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--blue-main); display: flex; align-items: center; gap: 0.8rem;">
+          Galaxy S25 Series
+          <span style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.7rem; border-radius: 999px;">LATEST</span>
+        </h2>
+        <p style="color: var(--gray-text); margin-bottom: 2rem;">The newest flagship with AI features</p>
+        
+        <div class="brand-models-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+          
+          <a class="model-card" href="samsung/galaxy-s25-ultra.html" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 20px; padding: 2rem 1.5rem; color: white; text-align: center; transition: all 0.3s ease; display: block; box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem;">Galaxy S25 Ultra</div>
+            <div style="font-size: 0.85rem; opacity: 0.9;">6.8" Display • S Pen</div>
+          </a>
+
+          <a class="model-card" href="samsung/galaxy-s25.html" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 20px; padding: 2rem 1.5rem; color: white; text-align: center; transition: all 0.3s ease; display: block; box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem;">Galaxy S25+</div>
+            <div style="font-size: 0.85rem; opacity: 0.9;">6.7" Display</div>
+          </a>
+
+          <a class="model-card" href="samsung/galaxy-s25.html" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 20px; padding: 2rem 1.5rem; color: #1e293b; text-align: center; transition: all 0.3s ease; display: block; box-shadow: 0 10px 30px rgba(168, 237, 234, 0.3);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem;">Galaxy S25</div>
+            <div style="font-size: 0.85rem; opacity: 0.8;">6.2" Display</div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Galaxy S24 Series -->
+      <div class="model-category fade-in delay-1" style="margin-bottom: 4rem;">
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--blue-main);">Galaxy S24 Series</h2>
+        <p style="color: var(--gray-text); margin-bottom: 2rem;">Premium flagship experience</p>
+        
+        <div class="brand-models-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+          
+          <a class="model-card" href="samsung/galaxy-s24-ultra.html" style="background: #ffffff; border: 2px solid #e5e7eb; border-radius: 20px; padding: 2rem 1.5rem; color: var(--blue-text); text-align: center; transition: all 0.3s ease; display: block; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--blue-main);">Galaxy S24 Ultra</div>
+            <div style="font-size: 0.85rem; color: var(--gray-text);">6.8" • S Pen</div>
+          </a>
+
+          <a class="model-card" href="samsung/galaxy-s24.html" style="background: #ffffff; border: 2px solid #e5e7eb; border-radius: 20px; padding: 2rem 1.5rem; color: var(--blue-text); text-align: center; transition: all 0.3s ease; display: block; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--blue-main);">Galaxy S24+</div>
+            <div style="font-size: 0.85rem; color: var(--gray-text);">6.7" Display</div>
+          </a>
+
+          <a class="model-card" href="samsung/galaxy-s24.html" style="background: #ffffff; border: 2px solid #e5e7eb; border-radius: 20px; padding: 2rem 1.5rem; color: var(--blue-text); text-align: center; transition: all 0.3s ease; display: block; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--blue-main);">Galaxy S24</div>
+            <div style="font-size: 0.85rem; color: var(--gray-text);">6.2" Display</div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Galaxy S23 Series -->
+      <div class="model-category fade-in delay-2" style="margin-bottom: 4rem;">
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--blue-main);">Galaxy S23 Series</h2>
+        <p style="color: var(--gray-text); margin-bottom: 2rem;">Powerful Snapdragon performance</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+          
+          <a href="samsung/galaxy-s23-ultra.html" style="background: #ffffff; border: 2px solid #e5e7eb; border-radius: 20px; padding: 2rem 1.5rem; text-align: center; transition: all 0.3s ease; display: block;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+            <div style="font-weight: 700; font-size: 1.1rem; color: var(--blue-main);">Galaxy S23 Ultra</div>
+          </a>
+
+          <a href="samsung/galaxy-s23.html" style="background: #ffffff; border: 2px solid #e5e7eb; border-radius: 20px; padding: 2rem 1.5rem; text-align: center; transition: all 0.3s ease; display: block;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+            <div style="font-weight: 700; font-size: 1.1rem; color: var(--blue-main);">Galaxy S23+</div>
+          </a>
+
+          <a href="samsung/galaxy-s23.html" style="background: #ffffff; border: 2px solid #e5e7eb; border-radius: 20px; padding: 2rem 1.5rem; text-align: center; transition: all 0.3s ease; display: block;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+            <div style="font-weight: 700; font-size: 1.1rem; color: var(--blue-main);">Galaxy S23</div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- S22, S21, S20 - Compact Grid -->
+      <div class="model-category fade-in delay-3" style="margin-bottom: 4rem;">
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--blue-main);">Galaxy S22 / S21 / S20</h2>
+        <p style="color: var(--gray-text); margin-bottom: 2rem;">Reliable flagship models</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem;">
+          
+          <a href="samsung/galaxy-s22-ultra.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            S22 Ultra
+          </a>
+
+          <a href="samsung/galaxy-s22.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            S22+
+          </a>
+
+          <a href="samsung/galaxy-s22.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            S22
+          </a>
+
+          <a href="samsung/galaxy-s21-ultra.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            S21 Ultra
+          </a>
+
+          <a href="samsung/galaxy-s21.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            S21+
+          </a>
+
+          <a href="samsung/galaxy-s21.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            S21
+          </a>
+
+          <a href="samsung/galaxy-s20-ultra.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            S20 Ultra
+          </a>
+
+          <a href="samsung/galaxy-s20.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            S20+
+          </a>
+
+          <a href="samsung/galaxy-s20.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            S20
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Galaxy A Series -->
+      <div class="model-category fade-in delay-4" style="margin-bottom: 4rem;">
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--blue-main);">Galaxy A Series</h2>
+        <p style="color: var(--gray-text); margin-bottom: 2rem;">Affordable & reliable</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
+          
+          <a href="samsung/galaxy-a55.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            Galaxy A55
+          </a>
+
+          <a href="samsung/galaxy-a54.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            Galaxy A54
+          </a>
+
+          <a href="samsung/galaxy-a53.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            Galaxy A53
+          </a>
+
+          <a href="samsung/galaxy-a52.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            Galaxy A52
+          </a>
+
+          <a href="samsung/galaxy-a51.html" style="background: var(--blue-soft); border-radius: 12px; padding: 1.2rem 1rem; text-align: center; transition: all 0.3s ease; display: block; font-size: 0.85rem; font-weight: 500; color: var(--blue-text);">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            Galaxy A51
+          </a>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
+  <style>
+    .model-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15) !important;
+    }
+  </style>
+
 </main>
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-column">
-        <h3>Cellular Master</h3>
-        <p>Your local gadget repair & parts specialist in Laval.</p>
-        <p class="footer-contact">
-          704 Curé-Labelle, Laval, QC H7V 2T9<br>
-          +1 514 299 3322<br>
-          support@cellularmaster.ca
-        </p>
-      </div>
-      <div class="footer-column">
-        <h4>Opening Hours</h4>
-        <ul class="hours-list">
-          <li><span>Mon – Fri</span><span>10:00 – 19:00</span></li>
-          <li><span>Sat</span><span>10:00 – 14:00</span></li>
-          <li><span>Sun</span><span>Closed</span></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
