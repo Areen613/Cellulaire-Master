@@ -658,11 +658,11 @@ img {
 }
 
 .brand-card {
-  background: linear-gradient(145deg, #0f172a, #1e293b);
+  background: linear-gradient(145deg, #ffffff, #f0f9ff);
   border-radius: 22px;
   padding: 2rem 1.5rem;
-  color: #e5f0ff;
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.4);
+  color: var(--blue-main);
+  box-shadow: 0 15px 40px rgba(15, 111, 182, 0.15);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -670,6 +670,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  border: 2px solid #e0f2fe;
 }
 
 .brand-card::before {
@@ -679,7 +680,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  background: linear-gradient(135deg, rgba(15, 111, 182, 0.05), rgba(49, 160, 255, 0.05));
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -690,7 +691,8 @@ img {
 
 .brand-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 25px 60px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 25px 60px rgba(15, 111, 182, 0.25);
+  border-color: var(--blue-main);
 }
 
 .brand-card .brand-name {
@@ -698,11 +700,12 @@ img {
   font-size: 1.3rem;
   position: relative;
   z-index: 1;
+  color: var(--blue-main);
 }
 
 .brand-card .brand-tag {
   font-size: 0.85rem;
-  color: #c7d2fe;
+  color: var(--gray-text);
   position: relative;
   z-index: 1;
 }
@@ -865,8 +868,8 @@ img {
 /* FOOTER */
 
 .site-footer {
-  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
-  color: #cbd5e1;
+  background: linear-gradient(180deg, #1e3a5f 0%, #0f2744 100%);
+  color: #e0f2fe;
   padding: 3rem 0 1.5rem;
   margin-top: 2rem;
 }
@@ -879,7 +882,7 @@ img {
 }
 
 .footer-column h3, .footer-column h4 {
-  color: #f1f5f9;
+  color: #ffffff;
   margin-bottom: 0.8rem;
   font-size: 1.1rem;
 }
@@ -887,7 +890,7 @@ img {
 .footer-column p, .footer-column li {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #94a3b8;
+  color: #bfdbfe;
 }
 
 .footer-contact {
@@ -895,7 +898,7 @@ img {
 }
 
 .hours-list li {
-  color: #94a3b8;
+  color: #bfdbfe;
 }
 
 .footer-links {
@@ -909,10 +912,11 @@ img {
 .footer-links a {
   transition: all 0.3s ease;
   display: inline-block;
+  color: #bfdbfe;
 }
 
 .footer-links a:hover {
-  color: #60a5fa;
+  color: #7dd3fc;
   transform: translateX(5px);
 }
 
@@ -1017,9 +1021,12 @@ img {
   <header class="site-header">
     <div class="header-inner container">
       <div class="header-top">
-        <a href="index.html" class="logo">
-          <span class="logo-mark">CM</span>
-          <span class="logo-text">Cellular Master</span>
+        <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.8rem;">
+          <div style="background: linear-gradient(135deg, var(--blue-main), #31a0ff); width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 1.3rem; box-shadow: 0 4px 12px rgba(15, 111, 182, 0.3);">CM</div>
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-size: 1.1rem; font-weight: 800; color: var(--blue-main); line-height: 1; letter-spacing: -0.02em;">CELLULAR MASTER</span>
+            <span style="font-size: 0.65rem; color: #666; font-weight: 600; letter-spacing: 0.08em; margin-top: 0.15rem;">REPAIR SPECIALISTS</span>
+          </div>
         </a>
 
         <div class="header-search">
@@ -1035,6 +1042,7 @@ img {
             <span id="header-user"></span>
           </div>
           <button type="button" id="btn-logout" class="header-icon" style="display:none;">Logout</button>
+          <a href="admin.html" class="header-icon" style="display:none;" id="admin-link">🛠️ Admin</a>
           <a href="favorites.html" class="header-icon">⭐ Favorites</a>
           <a href="cart.html" class="header-icon">🛒 Cart</a>
         </div>
@@ -1373,7 +1381,7 @@ img {
         <p class="footer-contact">
           📍 704 Curé-Labelle, Laval, QC H7V 2T9<br>
           📞 +1 514 299 3322<br>
-          ✉️ support@cellularmaster.ca
+          ✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c3b0b6b3b3acb1b783a0a6afafb6afa2b1aea2b0b7a6b1eda0a2">[email&#160;protected]</a>
         </p>
       </div>
       <div class="footer-column">

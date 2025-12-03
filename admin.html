@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Admin Dashboard – Cellular Master</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+:root {
+  --blue-topbar: #227FBB;
+  --blue-main: #0f6fb6;
+  --blue-soft: #f2f7fc;
+  --blue-text: #1f2933;
+  --gray-text: #4b5563;
+  --border-soft: #e0e7ff;
+  --card-bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--blue-text);
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1400px, 100% - 3rem);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.admin-header {
+  background: linear-gradient(135deg, #0f6fb6 0%, #31a0ff 100%);
+  color: white;
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(15, 111, 182, 0.2);
+}
+
+.admin-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  border: 2px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(15, 111, 182, 0.15);
+  border-color: var(--blue-main);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--gray-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--blue-main);
+}
+
+.filters {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray-text);
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 0.7rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  outline: none;
+  border-color: var(--blue-main);
+  box-shadow: 0 0 0 3px rgba(15, 111, 182, 0.1);
+}
+
+.reservations-table {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.table-header {
+  background: linear-gradient(135deg, var(--blue-main), #31a0ff);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-header h2 {
+  font-size: 1.5rem;
+}
+
+.export-btn {
+  background: white;
+  color: var(--blue-main);
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.export-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: var(--blue-soft);
+}
+
+thead th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 700;
+  color: var(--blue-main);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+  background: var(--blue-soft);
+}
+
+tbody td {
+  padding: 1.2rem 1rem;
+  font-size: 0.95rem;
+  color: var(--blue-text);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-ready {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-completed {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.action-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-complete {
+  background: #10b981;
+  color: white;
+}
+
+.btn-complete:hover {
+  background: #059669;
+}
+
+.btn-delete {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+}
+
+#loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--gray-text);
+}
+
+#no-reservations {
+  text-align: center;
+  padding: 3rem;
+  color: var(--gray-text);
+}
+
+.logout-btn {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: white;
+  color: var(--blue-main);
+}
+
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  table {
+    font-size: 0.85rem;
+  }
+  
+  thead th, tbody td {
+    padding: 0.7rem 0.5rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<div id="dashboard-content" style="display: none;">
+
+  <div class="admin-header">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h1>🛠️ Admin Dashboard</h1>
+          <p>Manage reservations and customer requests</p>
+        </div>
+        <button class="logout-btn" onclick="adminLogout()">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    
+    <!-- STATS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">📦</div>
+        <div class="stat-label">Total Reservations</div>
+        <div class="stat-value" id="stat-total">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⏳</div>
+        <div class="stat-label">Pending</div>
+        <div class="stat-value" id="stat-pending">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">✅</div>
+        <div class="stat-label">Ready</div>
+        <div class="stat-value" id="stat-ready">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🎉</div>
+        <div class="stat-label">Completed</div>
+        <div class="stat-value" id="stat-completed">0</div>
+      </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filters">
+      <div class="filter-group">
+        <label>Status</label>
+        <select id="filter-status" onchange="filterReservations()">
+          <option value="all">All Status</option>
+          <option value="pending">Pending</option>
+          <option value="ready">Ready</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Search</label>
+        <input type="text" id="filter-search" placeholder="Customer name, email, part..." oninput="filterReservations()" />
+      </div>
+      <div class="filter-group">
+        <label>Date</label>
+        <input type="date" id="filter-date" onchange="filterReservations()" />
+      </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="reservations-table">
+      <div class="table-header">
+        <h2>Reservations</h2>
+        <button class="export-btn" onclick="exportToCSV()">📥 Export CSV</button>
+      </div>
+      
+      <div id="loading">
+        <p>Loading reservations...</p>
+      </div>
+
+      <div id="no-reservations" style="display: none;">
+        <p>No reservations yet!</p>
+      </div>
+
+      <table id="reservations-table-data" style="display: none;">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Customer</th>
+            <th>Contact</th>
+            <th>Part</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="reservations-tbody">
+          <!-- Data loads here -->
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore-compat.js"></script>
+
+<script>
+// FIREBASE CONFIG (same as app.js)
+const firebaseConfig = {
+  apiKey: "AIzaSyCJhBArJ0njFc_7onw1_T3_JMxBIFVqq3Q",
+  authDomain: "cellular-master-f2d31.firebaseapp.com",
+  projectId: "cellular-master-f2d31",
+  storageBucket: "cellular-master-f2d31.firebasestorage.app",
+  messagingSenderId: "591380527708",
+  appId: "1:591380527708:web:aabf17b5d6e7f470fb0499",
+  measurementId: "G-5SHXHLRNY3"
+};
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+let allReservations = [];
+
+// CHECK AUTH - If not logged in, redirect to login page
+auth.onAuthStateChanged(user => {
+  if (user) {
+    // User is logged in - show dashboard
+    document.getElementById('dashboard-content').style.display = 'block';
+    loadReservations();
+  } else {
+    // Not logged in - redirect to login page
+    alert('Please login first to access admin dashboard!');
+    window.location.href = 'login.html';
+  }
+});
+
+// ADMIN LOGOUT
+function adminLogout() {
+  auth.signOut().then(() => {
+    window.location.href = 'index.html';
+  });
+}
+
+// LOAD RESERVATIONS
+async function loadReservations() {
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('no-reservations').style.display = 'none';
+  document.getElementById('reservations-table-data').style.display = 'none';
+  
+  try {
+    const snapshot = await db.collection('reservations').orderBy('timestamp', 'desc').get();
+    
+    allReservations = [];
+    snapshot.forEach(doc => {
+      allReservations.push({ id: doc.id, ...doc.data() });
+    });
+    
+    if (allReservations.length === 0) {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('no-reservations').style.display = 'block';
+    } else {
+      displayReservations(allReservations);
+      updateStats();
+    }
+  } catch (error) {
+    console.error('Error loading reservations:', error);
+    document.getElementById('loading').textContent = 'Error loading data!';
+  }
+}
+
+// DISPLAY RESERVATIONS
+function displayReservations(reservations) {
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('no-reservations').style.display = 'none';
+  document.getElementById('reservations-table-data').style.display = 'table';
+  
+  const tbody = document.getElementById('reservations-tbody');
+  tbody.innerHTML = '';
+  
+  reservations.forEach(res => {
+    const date = res.timestamp ? new Date(res.timestamp.toDate()).toLocaleDateString() : 'N/A';
+    const statusClass = `status-${res.status || 'pending'}`;
+    
+    const row = `
+      <tr>
+        <td>${date}</td>
+        <td><strong>${res.customerName || 'N/A'}</strong></td>
+        <td>${res.customerContact || 'N/A'}</td>
+        <td>${res.partName || 'N/A'}</td>
+        <td><span class="status-badge ${statusClass}">${res.status || 'pending'}</span></td>
+        <td class="action-btns">
+          <button class="btn-small btn-complete" onclick="updateStatus('${res.id}', 'completed')">Complete</button>
+          <button class="btn-small btn-delete" onclick="deleteReservation('${res.id}')">Delete</button>
+        </td>
+      </tr>
+    `;
+    tbody.innerHTML += row;
+  });
+}
+
+// UPDATE STATS
+function updateStats() {
+  const total = allReservations.length;
+  const pending = allReservations.filter(r => !r.status || r.status === 'pending').length;
+  const ready = allReservations.filter(r => r.status === 'ready').length;
+  const completed = allReservations.filter(r => r.status === 'completed').length;
+  
+  document.getElementById('stat-total').textContent = total;
+  document.getElementById('stat-pending').textContent = pending;
+  document.getElementById('stat-ready').textContent = ready;
+  document.getElementById('stat-completed').textContent = completed;
+}
+
+// FILTER RESERVATIONS
+function filterReservations() {
+  const status = document.getElementById('filter-status').value;
+  const search = document.getElementById('filter-search').value.toLowerCase();
+  const date = document.getElementById('filter-date').value;
+  
+  let filtered = allReservations;
+  
+  if (status !== 'all') {
+    filtered = filtered.filter(r => (r.status || 'pending') === status);
+  }
+  
+  if (search) {
+    filtered = filtered.filter(r => 
+      (r.customerName || '').toLowerCase().includes(search) ||
+      (r.customerContact || '').toLowerCase().includes(search) ||
+      (r.partName || '').toLowerCase().includes(search)
+    );
+  }
+  
+  if (date) {
+    filtered = filtered.filter(r => {
+      if (!r.timestamp) return false;
+      const resDate = new Date(r.timestamp.toDate()).toISOString().split('T')[0];
+      return resDate === date;
+    });
+  }
+  
+  displayReservations(filtered);
+}
+
+// UPDATE STATUS
+async function updateStatus(id, newStatus) {
+  try {
+    await db.collection('reservations').doc(id).update({ status: newStatus });
+    loadReservations();
+  } catch (error) {
+    alert('Error updating status!');
+  }
+}
+
+// DELETE RESERVATION
+async function deleteReservation(id) {
+  if (!confirm('Are you sure you want to delete this reservation?')) return;
+  
+  try {
+    await db.collection('reservations').doc(id).delete();
+    loadReservations();
+  } catch (error) {
+    alert('Error deleting reservation!');
+  }
+}
+
+// EXPORT TO CSV
+function exportToCSV() {
+  const csv = [
+    ['Date', 'Customer', 'Contact', 'Part', 'Status'].join(','),
+    ...allReservations.map(r => [
+      r.timestamp ? new Date(r.timestamp.toDate()).toLocaleDateString() : 'N/A',
+      r.customerName || 'N/A',
+      r.customerContact || 'N/A',
+      r.partName || 'N/A',
+      r.status || 'pending'
+    ].join(','))
+  ].join('\n');
+  
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `reservations-${new Date().toISOString().split('T')[0]}.csv`;
+  a.click();
+}
+</script>
+
+</body>
+</html>

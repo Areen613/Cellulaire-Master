@@ -152,6 +152,11 @@ auth.onAuthStateChanged((user) => {
   if (btnLogout) {
     btnLogout.style.display = user ? "inline-flex" : "none";
   }
+  
+  const adminLink = document.getElementById("admin-link");
+  if (adminLink) {
+    adminLink.style.display = user ? "inline-flex" : "none";
+  }
 
   const headerUser = document.getElementById("header-user");
   const headerUserPill = headerUser ? headerUser.parentElement : null;
@@ -257,7 +262,28 @@ document.addEventListener("click", async (evt) => {
 
   try {
     if (action === "reserve") {
-      alert("📞 To reserve this part, please call us at +1 514 299 3322 and mention: " + part);
+      // Prompt for customer information
+      const customerName = prompt("👤 Your name:");
+      if (!customerName) return;
+      
+      const customerContact = prompt("📞 Your phone or email:");
+      if (!customerContact) return;
+      
+      // Save reservation to Firebase
+      try {
+        await db.collection('reservations').add({
+          partName: part,
+          customerName: customerName,
+          customerContact: customerContact,
+          status: 'pending',
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        
+        alert("✅ Reservation saved! We'll contact you at: " + customerContact);
+      } catch (error) {
+        console.error('Error saving reservation:', error);
+        alert("❌ Error saving reservation. Please call us at +1 514 299 3322");
+      }
     } else if (action === "add-cart") {
       await addToCollection("cart", part);
       alert("✅ Added to your cart! Visit the cart page to review.");
