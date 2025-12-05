@@ -433,12 +433,24 @@ const db = firebase.firestore();
 
 let allReservations = [];
 
-// CHECK AUTH - If not logged in, redirect to login page
+// CHECK AUTH - Only allow specific admin emails
+const ADMIN_EMAILS = [
+  'owner@cellularmaster.ca',  // ← Change to owner's email
+  'admin@cellularmaster.ca'   // ← Add more admin emails here
+];
+
 auth.onAuthStateChanged(user => {
   if (user) {
-    // User is logged in - show dashboard
-    document.getElementById('dashboard-content').style.display = 'block';
-    loadReservations();
+    // Check if user is admin
+    if (ADMIN_EMAILS.includes(user.email)) {
+      // User is admin - show dashboard
+      document.getElementById('dashboard-content').style.display = 'block';
+      loadReservations();
+    } else {
+      // NOT admin - redirect away
+      alert('⛔ Access Denied! Admin access only.');
+      window.location.href = 'index.html';
+    }
   } else {
     // Not logged in - redirect to login page
     alert('Please login first to access admin dashboard!');

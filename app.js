@@ -145,6 +145,12 @@ function handleSearch(scopePrefix) {
 // --- Auth state ---
 let currentUser = null;
 
+// List of admin emails who can access admin dashboard
+const ADMIN_EMAILS = [
+  'owner@cellularmaster.ca',  // ← Change to owner's email
+  'admin@cellularmaster.ca'   // ← Add more admin emails here
+];
+
 auth.onAuthStateChanged((user) => {
   currentUser = user || null;
 
@@ -155,7 +161,9 @@ auth.onAuthStateChanged((user) => {
   
   const adminLink = document.getElementById("admin-link");
   if (adminLink) {
-    adminLink.style.display = user ? "inline-flex" : "none";
+    // Only show admin link if user is in admin list
+    const isAdmin = user && ADMIN_EMAILS.includes(user.email);
+    adminLink.style.display = isAdmin ? "inline-flex" : "none";
   }
 
   const headerUser = document.getElementById("header-user");
